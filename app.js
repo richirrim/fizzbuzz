@@ -14,5 +14,27 @@ const explorerInNode = getExplorersThatBackendMissionWithNode(explorersList, 'no
 const geUsernameExplorersThatMissionBackendWith = function(explorers) {
   return explorers.map(explorer => explorer.githubUsername)
 }
-const usernameExplorersInNode = getExplorersThatMissionBackendWith(explorerInNode)
-console.log(usernameExplorersInNode)
+const usernameExplorersInNode = geUsernameExplorersThatMissionBackendWith(explorerInNode)
+// console.log(usernameExplorersInNode)
+
+// Asigna una nueva propiedad trick dependiendo si el score del explorer 
+// es divisible entre 3 o 5, entre 3 y 5 y, sino, asigna el mismo score al trick.
+const assignTrickTo = function (explorer) {
+  if (explorer.score % 3 === 0 && explorer.score % 5 === 0) {
+    explorer.trick = 'FIZZBUZZ'
+  }
+  else if (explorer.score % 3 === 0) {
+    explorer.trick = 'FIZZ'
+  }
+  else if (explorer.score % 5 === 0) {
+    explorer.trick = 'BUZZ'
+  } 
+  else {
+    explorer.trick = explorer.score
+  }
+
+  return explorer
+}
+
+const newListExplorersTrick = explorerInNode.map(explorer => assignTrickTo(explorer))
+console.log(newListExplorersTrick)
