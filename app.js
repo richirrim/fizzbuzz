@@ -11,5 +11,8 @@ const explorerInNode = getExplorersThatBackendMissionWithNode(explorersList, 'no
 // console.log(explorerInNode)
 
 // Obtiene el username de los explorers que están en la Mission Backend con Node.
-const usernameExplorersInNode = explorerInNode.map(explorer => explorer.githubUsername)
-// console.log(usernameExplorersInNode)
+const geUsernameExplorersThatMissionBackendWith = function(explorers) {
+  return explorers.map(explorer => explorer.githubUsername)
+}
+const usernameExplorersInNode = getExplorersThatMissionBackendWith(explorerInNode)
+console.log(usernameExplorersInNode)
