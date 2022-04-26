@@ -39,6 +39,14 @@
 // const newListExplorersTrick = explorerInNode.map(explorer => assignTrickTo(explorer))
 // console.log(newListExplorersTrick)
 
+const ExplorerService = require('./lib/services/ExplorerService')
 const Reader = require('./lib/utils/Reader')
+
 const explorersList = Reader.jsonFile('explorers.json')
-console.log(explorersList)
+
+console.log(ExplorerService.filterByMission(explorersList, 'node'))
+console.log(ExplorerService.getAmountOfExplorersByMission(explorersList, 'node'))
+console.log(ExplorerService.getExplorersUsernamesByMission(explorersList, 'node'))
+
+console.log('\n', '------'.repeat(6))
+console.log('------'.repeat(6), '\n')
