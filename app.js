@@ -11,7 +11,7 @@ const explorerInNode = getExplorersThatBackendMissionWithNode(explorersList, 'no
 console.log(explorerInNode)
 
 // Obtiene el username de los explorers que están en la Mission Backend con Node.
-const geUsernameExplorersThatMissionBackendWith = function(explorers) {
+const geUsernameExplorersThatMissionBackendWith = function (explorers) {
   return explorers.map(explorer => explorer.githubUsername)
 }
 const usernameExplorersInNode = geUsernameExplorersThatMissionBackendWith(explorerInNode)
@@ -22,14 +22,11 @@ console.log(usernameExplorersInNode)
 const assignTrickTo = function (explorer) {
   if (explorer.score % 3 === 0 && explorer.score % 5 === 0) {
     explorer.trick = 'FIZZBUZZ'
-  }
-  else if (explorer.score % 3 === 0) {
+  } else if (explorer.score % 3 === 0) {
     explorer.trick = 'FIZZ'
-  }
-  else if (explorer.score % 5 === 0) {
+  } else if (explorer.score % 5 === 0) {
     explorer.trick = 'BUZZ'
-  }
-  else {
+  } else {
     explorer.trick = explorer.score
   }
 
