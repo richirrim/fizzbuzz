@@ -4,8 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test-w": "standard && node ./node_modules/jest/bin/jest.js",
-    "test-l": "standard && node node_modules/.bin/jest",
+    "test": "standard && node ./node_modules/.bin/jest",
     "start": "standard && node index.js",
     "lint": "standard",
     "lint-fix": "standard --fix"
@@ -25,16 +24,8 @@
     "url": "https://github.com/richirrim/fizzbuzz/issues"
   },
   "homepage": "https://github.com/richirrim/fizzbuzz#readme",
-  "resolutions": {
-    "jest-environment-jsdom": "28.0.2"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
-  },
   "devDependencies": {
     "jest": "^28.0.2",
-    "jest-environment-jsdom": "^27.5.1",
-    "jest-environment-jsdom-global": "^3.0.0",
     "standard": "^17.0.0"
   },
   "dependencies": {
