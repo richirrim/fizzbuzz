@@ -25,16 +25,19 @@
     "url": "https://github.com/richirrim/fizzbuzz/issues"
   },
   "homepage": "https://github.com/richirrim/fizzbuzz#readme",
-  "resolutions": { "jest-environment-jsdom": "28.0.2" },
+  "resolutions": {
+    "jest-environment-jsdom": "28.0.2"
+  },
   "jest": {
     "testEnvironment": "jsdom"
   },
   "devDependencies": {
     "jest": "^28.0.2",
+    "jest-environment-jsdom": "^27.5.1",
+    "jest-environment-jsdom-global": "^3.0.0",
     "standard": "^17.0.0"
   },
   "dependencies": {
-    "express": "^4.18.0",
-    "jest-environment-jsdom": "^28.0.2"
+    "express": "^4.18.0"
   }
 }
