@@ -32,5 +32,6 @@
   "dependencies": {
     "express": "^4.18.0",
     "jest-environment-jsdom": "^28.0.2"
-  }
+  },
+  "resolutions": { "jest-environment-jsdom": "28.0.2" }
 }
