@@ -6,7 +6,7 @@
   "scripts": {
     "test-w": "standard && node ./node_modules/jest/bin/jest.js",
     "test-l": "standard && node node_modules/.bin/jest",
-    "start": "standard && node app.js",
+    "start": "standard && node index.js",
     "lint": "standard",
     "lint-fix": "standard --fix"
   },
