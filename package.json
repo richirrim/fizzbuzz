@@ -2,12 +2,16 @@
   "name": "fizzbuzz",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "standard && node ./node_modules/.bin/jest",
+    "test-w": "standard && node ./node_modules/jest/bin/jest.js",
+    "test-l": "standard && node node_modules/.bin/jest",
     "start": "standard && node app.js",
     "lint": "standard",
     "lint-fix": "standard --fix"
+  },
+  "standard": {
+    "env": ["jest"]
   },
   "repository": {
     "type": "git",
