@@ -1,9 +1,12 @@
-const Reader = require('../../lib/utils/Reader')
 const ExplorerService = require('../../lib/services/ExplorerService')
 
 describe('ExplorerService class', () => {
   it('1) Filtra los Explorer que pertenecen a la Mission Nodejs.', () => {
-    const explorersList = Reader.jsonFile('explorers.json')
+    const explorersList = [
+      { name: 'Woopa1', githubUsername: 'ajolonauta1', mission: 'node' },
+      { name: 'Woopa2', githubUsername: 'ajolonauta2', mission: 'node' },
+      { name: 'Woopa6', githubUsername: 'ajolonauta6', mission: 'java' }
+    ]
     const explorersInNodeMission = ExplorerService.filterByMission(explorersList, 'node')
 
     explorersInNodeMission.forEach(explorer => {
@@ -11,18 +14,23 @@ describe('ExplorerService class', () => {
     })
   })
   it('2) Devuelve la cantidad de Explorers en la Mission Nodejs.', () => {
-    const explorersList = Reader.jsonFile('explorers.json')
-    const explorersInNodeMission = ExplorerService.getAmountOfExplorersByMission(explorersList, 'node')
-    const totalExplorer = explorersList.filter(explorer => explorer.mission === 'node')
+    const explorersList = [
+      { name: 'Woopa1', githubUsername: 'ajolonauta1', mission: 'node' },
+      { name: 'Woopa2', githubUsername: 'ajolonauta2', mission: 'node' },
+      { name: 'Woopa6', githubUsername: 'ajolonauta6', mission: 'java' }
+    ]
 
-    expect(explorersInNodeMission).toBe(`Hay un total de ${totalExplorer.length} explorers en la Mission Backend con Nodejs.`)
+    const amountExplorersInNodeMission = ExplorerService.getAmountOfExplorersByMission(explorersList, 'node')
+    expect(amountExplorersInNodeMission).toBe(2)
   })
   it('3) Devuelve una lista con los username de los Explorer que pertenecen a la Mission Node.', () => {
-    const explorersList = Reader.jsonFile('explorers.json')
-    const usernameExplorersInNodeMission = ExplorerService.getExplorersUsernamesByMission(explorersList, 'node')
-    const explorersInNodeMission = explorersList.filter(explorer => explorer.mission === 'node')
-    const usernameExplorers = explorersInNodeMission.map(explorer => explorer.githubUsername)
+    const explorersList = [
+      { name: 'Woopa1', githubUsername: 'ajolonauta1', mission: 'node' },
+      { name: 'Woopa2', githubUsername: 'ajolonauta2', mission: 'node' },
+      { name: 'Woopa6', githubUsername: 'ajolonauta6', mission: 'java' }
+    ]
 
-    expect(usernameExplorersInNodeMission).toEqual(usernameExplorers)
+    const usernameExplorersInNodeMission = ExplorerService.getExplorersUsernamesByMission(explorersList, 'node')
+    expect(usernameExplorersInNodeMission).toEqual(['ajolonauta1', 'ajolonauta2'])
   })
 })
