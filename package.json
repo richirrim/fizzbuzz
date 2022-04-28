@@ -6,6 +6,7 @@
   "scripts": {
     "test": "standard && node ./node_modules/.bin/jest",
     "start": "standard && node index.js",
+    "server": "node ./lib/server.js",
     "lint": "standard",
     "lint-fix": "standard --fix"
   },
