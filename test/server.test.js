@@ -9,13 +9,14 @@ describe('GET /', () => {
   })
 })
 
-describe('GET /v1/explorers', () => {
+describe('GET /v1/explorers/node', () => {
   it('1) Deberia mostrar todos los explores en la Mission Node', async () => {
-    const response = await api.get('/v1/explorers').send()
+    const response = await api.get('/v1/explorers/node').send()
 
     expect(response.status).toBe(200)
     expect(response.type).toEqual(expect.stringContaining('json'))
     expect(response.body).not.toEqual([])
+    expect(response.body[0].mission).toBe('node')
   })
 })
 
