@@ -15,8 +15,8 @@ describe('GET /v1/explorers/node', () => {
 
     expect(response.status).toBe(200)
     expect(response.type).toEqual(expect.stringContaining('json'))
-    expect(response.body).not.toEqual([])
     expect(response.body[0].mission).toBe('node')
+    expect(response.body).not.toHaveLength(0)
   })
 })
 
@@ -28,7 +28,7 @@ describe('GET /v1/explorers/amount/node', () => {
     expect(response.status).toBe(200)
     expect(response.body).toBeInstanceOf(Object)
     expect(mission).toBe('node')
-    expect(0).not.toBeNull()
+    expect(quantity).not.toBeNull()
   })
 })
 
