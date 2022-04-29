@@ -1,0 +1,20 @@
+const server = require('../lib/server')
+const supertest = require('supertest')
+const api = supertest(server)
+
+describe('GET /', () => {
+  it('Deberia responder con un código 200', async () => {
+    const response = await api.get('/msj').send()
+    expect(response.statusCode).toBe(200)
+  })
+})
+
+describe('GET /v1/explorers', () => {
+  it('1) Deberia mostrar todos los explores en la Mission Node', async () => {
+    const response = await api.get('/v1/explorers').send()
+
+    expect(response.status).toBe(200)
+    expect(response.type).toEqual(expect.stringContaining('json'))
+    expect(response.body).not.toEqual([])
+  })
+})
