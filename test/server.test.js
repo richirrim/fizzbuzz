@@ -20,6 +20,18 @@ describe('GET /v1/explorers/node', () => {
   })
 })
 
+describe('GET /v1/explorers/amount/node', () => {
+  it('1) Deberia devolver la cantidad de explorers en la Mission Node', async () => {
+    const response = await api.get('/v1/explorers/amount/node').send()
+    const { mission, quantity } = response.body
+
+    expect(response.status).toBe(200)
+    expect(response.body).toBeInstanceOf(Object)
+    expect(mission).toBe('node')
+    expect(0).not.toBeNull()
+  })
+})
+
 afterAll(() => {
   // Cierra la conexión con el server, para que supertest
   // no se enoje, despues de terminar todas las pruebas.
