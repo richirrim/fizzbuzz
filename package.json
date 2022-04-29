@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "standard && node ./node_modules/.bin/jest --watch --runInBand --detectOpenHandles",
+    "test": "standard && node ./node_modules/.bin/jest",
     "start": "standard && node index.js",
     "server": "node ./lib/server.js",
     "lint": "standard",

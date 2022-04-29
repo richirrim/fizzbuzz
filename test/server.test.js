@@ -1,6 +1,6 @@
-const server = require('../lib/server')
+const { app, server } = require('../lib/server')
 const supertest = require('supertest')
-const api = supertest(server)
+const api = supertest(app)
 
 describe('GET /', () => {
   it('Deberia responder con un código 200', async () => {
@@ -17,4 +17,10 @@ describe('GET /v1/explorers', () => {
     expect(response.type).toEqual(expect.stringContaining('json'))
     expect(response.body).not.toEqual([])
   })
+})
+
+afterAll(() => {
+  // Cierra la conexión con el server, para que supertest
+  // no se enoje, despues de terminar todas las pruebas.
+  server.close()
 })
