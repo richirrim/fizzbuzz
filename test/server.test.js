@@ -30,6 +30,19 @@ describe('GET /v1/explorers/amount/node', () => {
     expect(mission).toBe('node')
     expect(quantity).not.toBeNull()
   })
+
+  describe('GET /v1/explorers/usernames/node', () => {
+    it('Deberia devolver una lista de los usernames de los explorers en la Mission Node', async () => {
+      const response = await api.get('/v1/explorers/usernames/node').send()
+      const { mission, usernamesList } = response.body
+
+      expect(response.status).toBe(200)
+      expect(response.type).toEqual(expect.stringContaining('json'))
+      expect(response.body).toBeInstanceOf(Object)
+      expect(mission).toBe('node')
+      expect(usernamesList).not.toHaveLength(0)
+    })
+  })
 })
 
 afterAll(() => {
