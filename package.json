@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "standard && node ./node_modules/.bin/jest",
+    "test:watch": "npm run test -- --watch",
     "start": "standard && node index.js",
     "server": "node ./lib/server.js",
     "lint": "standard",
