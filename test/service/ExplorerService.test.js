@@ -33,4 +33,14 @@ describe('ExplorerService class', () => {
     const usernameExplorersInNodeMission = ExplorerService.getExplorersUsernamesByMission(explorersList, 'node')
     expect(usernameExplorersInNodeMission).toEqual(['ajolonauta1', 'ajolonauta2'])
   })
+  it('4) Devuelve una lista con los nombres de los Explorer que pertenecen a la Mission Node.', () => {
+    const explorersList = [
+      { name: 'Woopa1', githubUsername: 'ajolonauta1', mission: 'node' },
+      { name: 'Woopa2', githubUsername: 'ajolonauta2', mission: 'node' },
+      { name: 'Woopa3', githubUsername: 'ajolonauta3', mission: 'java' }
+    ]
+
+    const nameExplorersInNodeMission = ExplorerService.getListNameByMission(explorersList, 'node')
+    expect(nameExplorersInNodeMission).toEqual(['Woopa1', 'Woopa2'])
+  })
 })
